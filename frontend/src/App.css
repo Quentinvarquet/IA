@@ -1,34 +1,151 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Terminal style textarea */
+.terminal-textarea {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    resize: none;
+    background: #000;
+    color: #eee;
+    border: 1px solid #333;
+    padding: 16px;
+    width: 100%;
+    min-height: 300px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.terminal-textarea:focus {
+    border-color: #00ff94;
+    outline: none;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
+.terminal-textarea::placeholder {
+    color: #555;
+}
+
+/* JSON output with syntax highlighting */
+.json-output {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    background: #000;
+    color: #eee;
+    border: 1px solid #333;
+    padding: 16px;
+    min-height: 300px;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* Syntax highlighting */
+.json-key {
+    color: #00ff94;
+}
+
+.json-string {
+    color: #ffb800;
+}
+
+.json-number {
+    color: #ff6b6b;
+}
+
+.json-boolean {
+    color: #4dabf7;
+}
+
+.json-null {
+    color: #888;
+}
+
+/* Badge styles */
+.badge-sensitive {
+    background: rgba(255, 51, 51, 0.1);
+    border: 1px solid rgba(255, 51, 51, 0.3);
+    color: #ff3333;
+}
+
+.badge-anonymized {
+    background: rgba(0, 255, 148, 0.1);
+    border: 1px solid rgba(0, 255, 148, 0.3);
+    color: #00ff94;
+}
+
+/* Processing animation */
+@keyframes process {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+.processing {
+    animation: process 1s ease-in-out infinite;
+}
+
+/* Header styles */
+.header-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Button hover effect */
+.btn-terminal {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.btn-terminal:hover {
+    transform: translateX(2px);
+}
+
+.btn-terminal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 148, 0.2), transparent);
+    transition: left 0.3s ease;
+}
+
+.btn-terminal:hover::before {
+    left: 100%;
+}
+
+/* Stats panel */
+.stats-item {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #222;
+    font-size: 12px;
+}
+
+.stats-item:last-child {
+    border-bottom: none;
+}
+
+/* Field list */
+.field-item {
+    padding: 8px 12px;
+    border: 1px solid #333;
+    margin-bottom: 4px;
+    font-size: 11px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
 }
 
-.App-link {
-    color: #61dafb;
+.field-path {
+    color: #888;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.field-type {
+    color: #00ff94;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.05em;
 }
