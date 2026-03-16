@@ -1,0 +1,110 @@
+{
+  "project_name": "JSON Anonymizer Utility",
+  "design_philosophy": {
+    "identity": "The Redaction Protocol",
+    "core_concept": "Cyber-Security Audit Terminal. Raw, precise, and devoid of decoration. The design should feel like a specialized tool used by data privacy officers in a high-security facility.",
+    "vibe": "Technical, Brutalist, High-Contrast, Monospace-Only.",
+    "emotional_tone": "Secure, Efficient, Clinical."
+  },
+  "typography": {
+    "font_family_primary": "JetBrains Mono, Menlo, Monaco, Consolas, monospace",
+    "font_family_secondary": "JetBrains Mono, Menlo, Monaco, Consolas, monospace",
+    "instructions": "Use Monospace font for EVERYTHING. Headings, body, buttons, inputs. This is a developer tool, it should look like code.",
+    "scale": {
+      "h1": "text-3xl font-bold tracking-tight uppercase",
+      "h2": "text-xl font-semibold tracking-tight uppercase",
+      "body": "text-sm leading-relaxed",
+      "code": "text-xs"
+    }
+  },
+  "colors": {
+    "theme": "dark",
+    "palette": {
+      "background": "#050505",
+      "surface": "#0F0F0F",
+      "surface_highlight": "#1A1A1A",
+      "border": "#333333",
+      "text_primary": "#EEEEEE",
+      "text_secondary": "#888888",
+      "primary": "#00FF94",
+      "primary_foreground": "#000000",
+      "destructive": "#FF3333",
+      "warning": "#FFB800",
+      "success": "#00FF94",
+      "muted": "#222222"
+    },
+    "usage": {
+      "primary_action": "bg-primary text-primary-foreground hover:bg-primary/90",
+      "sensitive_data_highlight": "text-destructive bg-destructive/10 border border-destructive/20",
+      "anonymized_data_highlight": "text-success bg-success/10 border border-success/20",
+      "panel_background": "bg-surface border border-border"
+    }
+  },
+  "layout": {
+    "structure": "Split-screen or Top-Bottom (Responsive). Input on Left/Top, Output on Right/Bottom.",
+    "spacing": "Dense. Use p-4 for panels, p-2 for internal elements. Gap-4 for layout.",
+    "container": "max-w-7xl mx-auto p-4 md:p-8",
+    "border_radius": "rounded-none",
+    "glassmorphism": "Not used. Use solid, opaque surfaces with 1px borders."
+  },
+  "components": {
+    "buttons": {
+      "style": "sharp",
+      "radius": "rounded-none",
+      "base_class": "font-mono uppercase tracking-widest text-xs h-10 px-6 border border-primary/50 hover:bg-primary hover:text-black transition-all duration-200"
+    },
+    "inputs": {
+      "style": "terminal",
+      "radius": "rounded-none",
+      "base_class": "bg-black border border-border focus:border-primary focus:ring-0 font-mono"
+    },
+    "cards": {
+      "style": "outlined",
+      "radius": "rounded-none",
+      "base_class": "bg-surface border border-border"
+    },
+    "badges": {
+      "style": "outline",
+      "radius": "rounded-none",
+      "base_class": "border-current bg-transparent font-mono text-[10px] uppercase tracking-wider"
+    },
+    "sonner": {
+      "theme": "dark",
+      "style": "border border-border bg-black text-white font-mono rounded-none"
+    }
+  },
+  "visual_enhancers": {
+    "grid_background": "Optional: Subtle 20px grid pattern in background color #111.",
+    "scanlines": "Optional: Very subtle CRT scanline effect on the output panel.",
+    "cursor": "Default",
+    "animations": {
+      "hover": "translate-x-1 duration-150 ease-out",
+      "process": "A 'glitch' effect or 'typing' effect when anonymizing."
+    }
+  },
+  "accessibility": {
+    "contrast": "High contrast strictly enforced. WCAG AAA.",
+    "focus_states": "Visible thick outline (2px) in Primary Color.",
+    "aria_labels": "Mandatory for all icon-only buttons."
+  },
+  "assets": {
+    "icons": "lucide-react",
+    "icon_style": "Stroke width 1.5px or 2px. Sharp join if possible."
+  },
+  "universal_guidelines": [
+    "DO NOT use gradients.",
+    "DO NOT use shadows (flat design only).",
+    "DO NOT use rounded corners (0px radius).",
+    "All interactive elements must have data-testid attributes.",
+    "Use 'JetBrains Mono' or system monospace for all text.",
+    "The UI should feel like a CLI tool wrapped in a GUI."
+  ],
+  "instructions_to_main_agent": {
+    "step_1": "Configure tailwind.config.js to use the monochrome palette and 0px border radius default.",
+    "step_2": "Install 'lucide-react' if not present.",
+    "step_3": "Create the Layout: A header with a 'Terminal' look, a main content area with two large textareas (Source, Anonymized), and a stats panel.",
+    "step_4": "Implement the 'Anonymize' function logic (mocked or real) with a visual delay/effect.",
+    "step_5": "Use the 'sonner' toast for copy feedback.",
+    "step_6": "Ensure the output JSON syntax highlighting (simple color spans) follows the theme."
+  }
+}
